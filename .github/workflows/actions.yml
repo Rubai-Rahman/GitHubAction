@@ -3,17 +3,23 @@ name: Actions Workflow
 on: [push, pull_request]
 
 jobs:
-  run-github-actions: 
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name : List Files
+      - name: List Files
         run: |
-         pwd
-         ls
+          pwd
+          ls
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: List Files After checkout
+        run: |
+          pwd
+          ls -a
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@main
-        with: 
+        with:
           who-to-greet: Abir
       - name: Log Greeting Time
-        run: echo "${{steps.greet.outputs.Time}}" 
+        run: echo "${{steps.greet.outputs.Time}}"
