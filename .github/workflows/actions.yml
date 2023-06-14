@@ -3,8 +3,8 @@ name: Actions Workflow
 on: [push]
 
 jobs:
-  run-github-actions:
-    runs-on: ubunto-latest
+  run-github-actions: 
+    runs-on: ubuntu-latest
     steps:
       - name: Simple JS Action
         id: greet
