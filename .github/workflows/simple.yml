@@ -3,9 +3,9 @@
 name: CI
 
 # Controls when the workflow will run
-on: [push]
+on:
+  [push]
   # Triggers the workflow on push or pull request events
-    
 
   # Allows you to run this workflow manually from the Actions tab
   #workflow_dispatch:
@@ -40,7 +40,7 @@ jobs:
           (platform.processor())
         shell: python
   run-windows-commands:
-    runs-on: windows-lates
+    runs-on: windows-latest
     steps:
       - name: Directory PowerShell
         run: Get-Location
