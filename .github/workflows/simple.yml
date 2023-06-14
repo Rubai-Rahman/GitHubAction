@@ -33,3 +33,10 @@ jobs:
           echo test, and deploy your project.
           node -v
           npm -v
+      - name: python Command
+        run: |
+          import platform
+          print
+          (platform.processor())
+        shell: python
+          
